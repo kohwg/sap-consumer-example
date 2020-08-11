@@ -1,7 +1,7 @@
 
 package com.example.consumingwebservice.business.config;
 
-import com.example.consumingwebservice.domain.CurrencyService;
+import com.example.consumingwebservice.domain.soapService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -12,10 +12,10 @@ import org.springframework.ws.soap.SoapVersion;
 import org.springframework.ws.soap.saaj.SaajSoapMessageFactory;
 
 @Configuration
-public class CountryConfiguration {
+public class SoapRequestConfiguration {
 
 	@Autowired
-	private CurrencyService currencyService;
+	private soapService soapService;
 
 	// add this line due to SOAP12
 	@Bean
@@ -33,17 +33,17 @@ public class CountryConfiguration {
 	}
 
 	@Bean
-	public CurrencyService currencyService(Jaxb2Marshaller marshaller, SaajSoapMessageFactory messageFactory) {
+	public soapService soapService(Jaxb2Marshaller marshaller, SaajSoapMessageFactory messageFactory) {
 		// localTest 용
-		currencyService.setDefaultUri("https://6q6j808jnf.execute-api.ap-northeast-2.amazonaws.com/DEV/sapendpoint");
+		soapService.setDefaultUri("https://6q6j808jnf.execute-api.ap-northeast-2.amazonaws.com/DEV/sapendpoint");
 		// private Endpoint 용
 //		currencyService.setDefaultUri("https://ie2szfste0.execute-api.ap-northeast-2.amazonaws.com/DEV/sapendpoint");
-		currencyService.setMarshaller(marshaller);
-		currencyService.setMarshaller(marshaller);
-		currencyService.setUnmarshaller(marshaller);
+		soapService.setMarshaller(marshaller);
+		soapService.setMarshaller(marshaller);
+		soapService.setUnmarshaller(marshaller);
 		// add this line due to SOAP12
-		currencyService.setMessageFactory(messageFactory);
-		return currencyService;
+		soapService.setMessageFactory(messageFactory);
+		return soapService;
 	}
 
 }

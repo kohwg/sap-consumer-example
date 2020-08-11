@@ -1,6 +1,6 @@
 package com.example.consumingwebservice.infra;
 
-import com.example.consumingwebservice.domain.CurrencyService;
+import com.example.consumingwebservice.domain.soapService;
 import com.example.consumingwebservice.business.wsdl.YFMAWSWS01;
 import com.example.consumingwebservice.business.wsdl.YFMAWSWS01Response;
 
@@ -10,9 +10,9 @@ import org.springframework.stereotype.Component;
 import org.springframework.ws.soap.client.core.SoapActionCallback;
 
 @Component
-public class CurrencyServiceWsdl extends CurrencyService {
+public class SoapServiceWsdl extends soapService {
 
-    private static final Logger log = LoggerFactory.getLogger(CurrencyServiceWsdl.class);
+    private static final Logger log = LoggerFactory.getLogger(SoapServiceWsdl.class);
 
     public YFMAWSWS01Response getSentence(String lastName, String firstName, String title){
         YFMAWSWS01 request = new YFMAWSWS01();

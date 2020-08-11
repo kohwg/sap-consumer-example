@@ -1,15 +1,12 @@
 package com.example.consumingwebservice.business;
 
-import com.example.consumingwebservice.business.application.CountryService;
-import com.example.consumingwebservice.domain.CurrencyService;
+import com.example.consumingwebservice.business.application.SoapRequestService;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
@@ -23,7 +20,7 @@ public class ConsumingWebServiceApplication extends SpringBootServletInitializer
     }
 
 	@Autowired
-	private CountryService countryService;
+	private SoapRequestService soapRequestService;
 	private static final Logger log = LoggerFactory.getLogger(ConsumingWebServiceApplication.class);
 
 	public static void main(String[] args) {
