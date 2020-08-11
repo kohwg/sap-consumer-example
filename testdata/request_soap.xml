@@ -1,0 +1,13 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:urn="urn:sap-com:document:sap:rfc:functions">
+   <soap:Header/>
+   <soap:Body>
+      <urn:YFM_AWS_WS01>
+         <!--Optional:-->
+         <IP_FIRSTNAME>Wonkyung</IP_FIRSTNAME>
+         <!--Optional:-->
+         <IP_LASTNAME>Koh</IP_LASTNAME>
+         <!--Optional:-->
+         <IP_TITLE>Ms.</IP_TITLE>
+      </urn:YFM_AWS_WS01>
+   </soap:Body>
+</soap:Envelope>

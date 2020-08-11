@@ -1,0 +1,37 @@
+plugins {
+	id 'java'
+}
+
+
+// end::configurations[]
+
+repositories {
+	mavenCentral()
+}
+
+// end::wsdl[]
+
+dependencies {
+// tag::dependency[]
+	//implementation project(':infra')
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation ('org.springframework.boot:spring-boot-starter-web-services') {
+		exclude group: 'org.springframework.boot', module: 'spring-boot-starter-tomcat'
+	}
+
+// end::dependency[]
+	testImplementation('org.springframework.boot:spring-boot-starter-test') {
+		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	}
+}
+
+test {
+	useJUnitPlatform()
+}
+//
+//// tag::bootjar[]
+//bootJar {
+//	baseName = 'gs-consuming-web-service'
+//	version =  '0.0.1'
+//}
+//// end::bootjar[]

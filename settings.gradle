@@ -1,0 +1,4 @@
+rootProject.name = 'consuming-web-service'
+include 'business'
+include 'infra'
+
